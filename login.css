@@ -1,0 +1,78 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background: #1A1410;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #B5AEA4;
+}
+
+.logo {
+    width: 180px;
+    margin: 0 auto 20px;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.login-box {
+    background: #2E241D;
+    padding: 30px;
+    border-radius: 10px;
+    width: 320px;       /* más ancho que antes, zoom natural */
+    max-width: 90%;     /* evita que se salga de la pantalla en móviles muy pequeños */
+    text-align: center;
+    font-size: 1.6rem;  /* aumenta tamaño de texto para que se vea más grande */
+    color: #E6E1D8;
+}
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;   /* fuente más grande para móvil */
+}
+
+button {
+    width: 70%;
+    padding: 14px;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #64B346;
+    border: none;
+    border-radius: 6px;
+    color: #211A15;
+    cursor: pointer;
+    display: block;
+    font-size: 1rem;
+}
+
+/* Hover */
+button:hover {
+    background: #E0B255;
+}
+
+/* MEDIA QUERY PARA CELULARES MUY PEQUEÑOS */
+@media (max-width: 400px) {
+    .login-box {
+        width: 90%;       /* deja un pequeño margen */
+        font-size: 1.4rem;
+        padding: 20px;
+    }
+
+    input, button {
+        width: 95%;
+        font-size: 0.95rem;
+    }
+
+    .logo {
+        width: 140px;
+    }
+}

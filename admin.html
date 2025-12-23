@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Panel de precios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="logito.ico">
+  <link rel="stylesheet" href="admin.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+  <div class="logo">
+      <img src="img/456.webp" alt="Logo">
+  </div>
+
+  <div class="panel">
+    <h1>Panel de Precios</h1>
+
+    <p id="status-msg" style="display:none; text-align:center; font-weight:bold;"></p>
+
+    <div class="input-group">
+      <label>Precio por unidad</label>
+      <input type="text" id="precioUno" placeholder="Ej: 6K">
+    </div>
+
+    <button type="button" onclick="guardarPrecio()">Guardar</button>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="index.html" style="color: #64B346; font-weight: bold; text-decoration:none;">
+            Ver página con precios actualizados
+        </a>
+    </div>
+      
+    <div style="text-align:right; margin: 10px 20px;">
+        <a href="#" onclick="cerrarSesion()" style="color: #b34646ff; font-weight: bold; text-decoration:none;">
+            Cerrar sesión
+        </a>
+    </div>
+  </div>
+
+  <script>
+    // 1. CONFIGURACIÓN (Primero definimos la conexión)
+    const SUPABASE_URL = 'https://oxwnepmnofxzpgkiigit.supabase.co';
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im94d25lcG1ub2Z4enBna2lpZ2l0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYxMDIzMDcsImV4cCI6MjA4MTY3ODMwN30.n-TWFNjcaXrNn_Vl_qwZpXCP6ujwqgNrk12lt8IWXAU';
+    const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+    // 2. EL ESCUDO (Ahora que _supabase existe, chequeamos la sesión)
+    async function chequearSesion() {
+        const { data: { session } } = await _supabase.auth.getSession();
+        
+        if (!session) {
+            // Si no hay sesión, mandamos al login antes de que vea nada
+            window.location.href = "login.html";
+        } else {
+            // Si hay sesión, recién ahí cargamos el precio actual
+            cargarPrecioActual();
+        }
+    }
+    
+    // Ejecutamos el chequeo apenas carga el script
+    chequearSesion();
+
+    // 3. CARGAR EL PRECIO ACTUAL
+    async function cargarPrecioActual() {
+        const { data } = await _supabase
+            .from('productos')
+            .select('precio')
+            .ilike('nombre', 'cookies')
+            .single();
+        
+        if (data) {
+            document.getElementById('precioUno').value = data.precio;
+        }
+    }
+
+    // 4. FUNCIÓN PARA GUARDAR
+    async function guardarPrecio() {
+        const nuevoPrecio = document.getElementById('precioUno').value;
+
+        const { data, error } = await _supabase
+            .from('productos')
+            .update({ precio: nuevoPrecio })
+            .eq('nombre', 'cookies')
+            .select(); 
+
+        if (error) {
+            alert("Error técnico: " + error.message);
+        } else if (data && data.length > 0) {
+            alert("¡Guardado correctamente! Nuevo precio: " + nuevoPrecio);
+        } else {
+            alert("OJO: No se encontró el producto 'cookies'.");
+        }
+    }
+
+    // 5. CERRAR SESIÓN
+    async function cerrarSesion() {
+        await _supabase.auth.signOut();
+        window.location.href = "login.html";
+    }
+</script>
+
+</body>
+</html>
