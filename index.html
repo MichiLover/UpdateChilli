@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <link rel="icon" type="image/png" href="img/logito.ico">
+  <title>Chilli Cookies</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <!-- Tipografía base (legible) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <header class="main-header">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="img/apaisado chilli jpg.jpg"></div>
+          <!-- <div class="swiper-slide"><img src="img/otra-foto.jpg"></div> -->
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </header>
+
+  <section class="hero">
+
+    <div class="hero-content">
+        <div class="product-image">
+            <img src="img/foto jose 1.jpeg" alt="Galletas artesanales" />
+        </div>
+
+
+      <div class="tagline">
+        <h1>Galletas <span class="highlight">mágicas</span></h1>
+      </div>
+
+
+
+      <div id="app">
+        <div class="price">
+          1 x {{ prices.one }}
+        </div>
+      </div>
+
+
+
+    <div class="cta-group">
+
+        <div class="cta-item">
+            <a href="https://wa.me/5492646224695?text=Hola,%20quiero%20pedir%20galletas" class="icon-btn whatsapp">
+            <img src="img/whastapp.png" alt="WhatsApp">
+            </a>
+            <a href="https://wa.me/5492646224695?text=Hola,%20quiero%20pedir%20galletas" class="text-btn">
+            Pedir por WhatsApp
+            </a>
+        </div>
+
+
+        </div>
+
+    </div>
+    
+        <div class="test-cta-group">
+            <div class="test-cta-item">
+                <a href="https://wa.me/5492646224695?text=Hola,%20quiero%20pedir%20galletas" class="test-link">
+                    <div class="test-cookie-escena">
+                        <div class="test-cookie-tarjeta">
+                            <img src="img/cookie-frente.png" class="test-cookie-cara test-frente" alt="Frente">
+                            <img src="img/cookie-atras.png" class="test-cookie-cara test-atras" alt="Atrás">
+                        </div>
+                    </div>
+                    <span class="test-text-btn">Pedir por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+
+  </section>
+
+
+
+  <section class="info">
+    <div class="content">
+      <p>Chilli nace del amor por la cocina y del respeto por una planta noble que acompaña y conecta.</p>
+      <p>Es un emprendimiento artesanal que invita a disfrutar, relajarse y compartir sabores hechos a mano.</p>
+      <p>Elaborado con dedicación y con un profundo gusto por lo simple.</p>
+    </div>
+
+
+    
+    <div class="cookie-escena">
+      <div class="cookie-tarjeta">
+        <img src="img/cookie-frente.png" class="cookie-cara frente" alt="Galleta frente">
+        <img src="img/cookie-atras.png" class="cookie-cara atras" alt="Galleta atrás">
+      </div>
+    </div>
+  </section>
+
+
+  <section class="final-cta">
+    <p> San Juan - Argentina</p>
+    <img src="img/sinfondo.png" alt="pie de pagina">
+  </section>
+
+
+
+  <!-- Vue 3 desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  
+  <script src="app.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,500 @@
+:root {
+    --bg-dark: #211A15;    /* café oscuro */
+    --bg-brick: #2E241D;  /* marrón piedra */
+    --bg-deep: #1A1410; /* marrón más profundo para cierre */
+
+
+
+    --text-light: #E6E1D8;   /* texto principal */
+    --text-muted: #B5AEA4;  /* texto secundario */
+
+    --accent: #E0B255;      /* dorado artesanal */
+    --accent-green: #25d366;
+    --accent-green-soft: #64B346;
+}
+
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      line-height: 1.4;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding: 24px 16px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+ 
+      background-size: cover;
+      background-position: center;
+    }
+
+    .logo {
+    width: 180px;          /* tamaño del logo */
+    margin: 0 auto 20px;   /* centrado horizontal y separación */
+    }
+
+    .logo img {
+    width: 100%;
+    height: 20vh;
+    display: block;
+    border-radius: 0; /* elimina cualquier redondeo */
+    }
+
+    .hero-content {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .product-image {
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto 12px;
+    transform: translateY(-36px);
+    }
+
+    .product-image img {
+        width: 100%;
+        height: 42vh;   /* aumenta la altura de la imagen */
+        display: block;
+        border-radius: 12px;
+    }
+
+    /* .product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    } */
+
+
+    .tagline {
+      font-size: 16px;
+      margin-bottom: 12px;
+      opacity: 0.9;
+    }
+
+    .highlight {
+    color: #64B346;
+    }
+
+
+    .price {
+    font-size: 36px;
+    font-weight: 800;
+    color: #f2f2f2;
+    background: rgba(0,0,0,0.55);
+    display: inline-block;
+    padding: 6px 14px;
+    margin: 8px 0;
+    transform: rotate(-2deg);
+    border-left: 4px solid #8B5E3C; 
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    
+    }
+
+
+    .price span {
+      display: block;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-light);
+      opacity: 0.9;
+    }
+
+    .cta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px;
+    }
+
+    .cta-item {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* CLAVE */
+    gap: 10px;
+    }
+
+    .icon-btn {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+        
+    .icon-btn.whatsapp {
+    background-color: #111;
+    border: 1px solid #25d366;
+    }
+    .icon-btn.whatsapp:hover {
+    background-color: rgba(37, 211, 102, 0.25);
+    }
+    .icon-btn.whatsapp:active {
+    background-color: rgba(37, 211, 102, 0.25);
+    }
+
+    .cta-item:first-child .text-btn:hover {
+    background-color: rgba(37, 211, 102, 0.18);
+    }
+    .cta-item:first-child .text-btn:active {
+    background-color: rgba(37, 211, 102, 0.18);
+    }
+
+
+    .icon-btn img {
+    width: 22px;
+    height: 22px;
+    filter: invert(1);
+    }
+
+    .text-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 1px solid #1A1410;
+    color: #fff;
+    }
+
+    .cta-item:first-child .text-btn {
+    border-color: #25d366;
+    }
+
+    .btn {
+      padding: 14px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+
+    .btn-whatsapp {
+      background-color: var(--accent-green);
+      color: #000;
+    }
+
+
+    /* INFO */
+    /* CONTENEDOR DE FONDO: ocupa todo el ancho */
+    .info {
+      background-color: var(--bg-brick);  /* el color que ya tenés */
+      padding: 32px 0;                    /* arriba y abajo, sin afectar los lados */
+    }
+
+    /* CONTENIDO: centrado y con ancho máximo */
+    .info .content {
+      max-width: 2000px;     /* ancho máximo del texto */
+      margin: 0 auto;       /* centra horizontalmente */
+      text-align: center;   /* centra los párrafos */
+      padding: 0 16px;      /* espacio a los lados para móviles */
+    }
+
+    .info p {
+      font-size: 16px;
+      margin-bottom: 12px;
+      opacity: 0.9;
+    }
+
+    /* IDENTIDAD */
+    .identity {
+      padding: 32px 16px;
+      background-color: var(--bg-dark);
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .identity p {
+      font-size: 16px;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .final-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 16px;
+    background-color: var(--bg-deep);
+    }
+
+    .final-cta p {
+    font-size: 15px;
+    opacity: 0.8;
+    }
+
+    .final-cta img {
+    width: 48px;     /* tamaño chico */
+    height: auto;
+    display: block;
+    }
+
+
+    /* =========================================
+   NUEVO: ESTILOS PARA EL CARRUSEL (HEADER)
+   ========================================= */
+
+.main-header {
+    width: 100%; 
+    overflow: hidden;
+    background-color: var(--bg-deep);
+}
+
+.mySwiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    /* MAGIA: Recorta la imagen para que llene el espacio sin deformarse */
+    object-fit: cover; 
+    /* Zoom centrado (puedes cambiar 'center' por 'top' si quieres ver más la parte de arriba) */
+    object-position: center; 
+    display: block;
+}
+
+/* Personalización de los puntitos del carrusel */
+.swiper-pagination-bullet {
+    background: var(--text-muted);
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--accent-green-soft) !important;
+    opacity: 1;
+}
+
+/* Ajuste para que el HERO no quede pegado al carrusel */
+.hero {
+    min-height: auto; /* Cambiado de 100vh para que fluya después del carrusel */
+    padding: 40px 16px;
+}
+
+/* --- ANIMACIÓN OPTIMIZADA --- */
+@keyframes efectoOlas {
+    0% { transform: scale(1) rotate(0deg); }
+    33% { transform: scale(1.02) rotate(0.5deg); }
+    66% { transform: scale(1.01) rotate(-0.5deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+/* Animación de zoom suave */
+@keyframes zoomSutil {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.swiper-slide-active img {
+  /* Cuando la imagen se activa, empieza a crecer muy lento */
+  animation: zoomSutil 6s linear infinite alternate;
+}
+
+.main-header {
+    overflow: hidden; /* Evita que el zoom se salga del cuadro */
+}
+
+
+
+/*css cookie giratoria*/
+
+/* --- CSS COOKIE GIRATORIA (SOLO GIRO) --- */
+
+.cookie-escena {
+  width: 200px;      
+  height: 200px;
+  perspective: 1000px;
+  margin: 40px auto; 
+  position: relative;
+}
+
+.cookie-tarjeta {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  /* Animación única de giro */
+  animation: girarGalleta 10s linear infinite;
+}
+
+.cookie-cara {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Oculta la cara opuesta al girar */
+  object-fit: contain;
+}
+
+/* La cara de atrás debe estar pre-rotada */
+.atras {
+  transform: rotateY(180deg);
+}
+
+/* Animación de Giro 3D */
+@keyframes girarGalleta {
+  from { 
+    transform: rotateY(0deg); 
+  }
+  to { 
+    transform: rotateY(360deg); 
+  }
+}
+
+/* Pausar al pasar el mouse (opcional) */
+.cookie-escena:hover .cookie-tarjeta {
+  animation-play-state: paused;
+  cursor: pointer;
+}
+
+
+
+/*tester*/
+
+/* Centramos el grupo entero en la página */
+.test-cta-group {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    width: 100%;
+    margin: 20px 0;         /* Espacio arriba y abajo */
+}
+
+/* El item que contiene el link */
+.test-cta-item {
+    display: flex;
+    justify-content: center;
+}
+
+/* El link con la galleta y el texto alineados */
+.test-link {
+    display: flex;
+    align-items: center;    /* Centra la galleta con el texto verticalmente */
+    gap: 12px;              /* Espacio entre la galleta y el texto */
+    text-decoration: none;
+}
+
+/* Tamaño de la cookie (estilo icono) */
+.test-cookie-escena {
+    width: 45px; 
+    height: 45px;
+    perspective: 500px;
+}
+
+.test-cookie-tarjeta {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: test-girar 6s linear infinite;
+}
+
+.test-cookie-cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    object-fit: contain;
+}
+
+.test-atras {
+    transform: rotateY(180deg);
+}
+
+@keyframes test-girar {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+/*-----------------responsivo---------------------*/
+
+/* 1. CELULARES XS y S (Pantallas pequeñas) */
+@media (max-width: 576px) {
+    .main-header {
+        height: auto;        /* La altura se ajusta a la imagen */
+        background: none;    /* Quitamos cualquier color de fondo */
+    }
+    .swiper-slide img {
+        width: 100%;
+        height: auto;        /* Mantiene la proporción original de las 3 fotos */
+        display: block;      /* Evita espacios en blanco debajo de la imagen */
+        object-fit: initial; /* Reseteamos el ajuste forzado */
+    }
+}
+
+/* 2. CELULARES M (iPhone Pro Max, Plus, etc.) */
+@media (min-width: 577px) and (max-width: 767px) {
+    .main-header {
+        height: auto;
+        background: none;
+    }
+    .swiper-slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: initial;
+    }
+}
+/* 1. Mantenemos el diseño de "celular/tablet" hasta los 761px */
+@media (max-width: 761px) {
+    .main-header {
+        height: auto;        /* Que la imagen mande */
+        background: none;
+    }
+    .swiper-slide img {
+        width: 100%;
+        height: auto;        /* Muestra las 3 fotos completas */
+        display: block;
+        object-fit: initial;
+    }
+}
+
+/* 2. El cambio que mencionas, configurado exactamente en 762px */
+@media (min-width: 762px) {
+    .main-header {
+        /* Aquí ajustamos la variable que hablamos para que los costados se vean bien */
+        height: 280px;       /* Ajusta este valor (280px a 350px) para ver más o menos de los lados */
+        width: 100%;
+        overflow: hidden;
+        background-color: var(--bg-deep);
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;   /* En PC usamos cover para que se vea profesional de borde a borde */
+        object-position: center;
+    }
+}
+@media (min-width: 764px) {
+    .main-header {
+        /* Bajamos la altura para que coincida con el formato de tu imagen triple */
+        height: 320px; 
+        background-color: transparent; /* Quitamos el fondo marrón */
+        width: 100%;
+    }
+
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        /* Volvemos a cover pero con la altura ajustada ya no se comerá los costados */
+        object-fit: cover; 
+        object-position: center;
+    }
+}
